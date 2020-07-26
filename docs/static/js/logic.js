@@ -52,7 +52,13 @@ function createMap(earthquakes) {
     zoom: 5,
     layers: [streetmap, earthquakes]
   });
-
+  // Create a circle and pass in some initial options
+  L.circle([45.52, -122.69], {
+  color: "green",
+  fillColor: "green",
+  fillOpacity: 0.75,
+  radius: 500
+  }).addTo(myMap);
   // Create a layer control
   // Pass in our baseMaps and overlayMaps
   // Add the layer control to the map
