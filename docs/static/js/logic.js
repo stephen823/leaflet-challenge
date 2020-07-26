@@ -15,7 +15,7 @@ L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 }).addTo(map);
 
 // If data.beta.nyc is down comment out this link
-var link = "https://data-beta-nyc-files.s3.amazonaws.com/resources/35dd04fb-81b3-479b-a074-a27a37888ce7/d085e2f8d0b54d4590b1e7d1f35594c1pediacitiesnycneighborhoods.geojson?Signature=l8OAPLVQe0lMH8Nf%2BYrRSFj73jo%3D&Expires=1585837691&AWSAccessKeyId=AKIAWM5UKMRH2KITC3QA";
+var link = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson";
 
 // Uncomment this link local geojson for when data.beta.nyc is down
 // var link = "static/data/nyc.geojson";
