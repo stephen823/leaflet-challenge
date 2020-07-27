@@ -1,5 +1,58 @@
 var queryUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson";
 
+function Colourscale (magnitude){
+    if (magnitude < 3){
+      return "#99ff33"
+    }else if (magnitude >= 3 && magnitude < 4 ){
+      return "#ccff33"
+    }else if (magnitude >= 4 && magnitude < 5 ){
+      return "#ffff00"
+    }else if (magnitude >= 5 && magnitude < 6 ){
+      return "#ff9900"
+    }else if (magnitude >= 6 && magnitude < 7 ){
+      return "#cc6600" 
+    }else if (magnitude >= 7 && magnitude < 8 ){
+      return "#ff3300"
+    }else {
+      return "#990000"
+    }
+  }
+
+function Classifier (magnitude){
+    if (magnitude < 3){
+      return "No Applicable"
+    }else if (magnitude >= 3 && magnitude < 4 ){
+      return "Minor"
+    }else if (magnitude >= 4 && magnitude < 5 ){
+      return "Light"
+    }else if (magnitude >= 5 && magnitude < 6 ){
+      return "Moderate"
+    }else if (magnitude >= 6 && magnitude < 7 ){
+      return "Strong" 
+    }else if (magnitude >= 7 && magnitude < 8 ){
+      return "Major"
+    }else {
+      return "Great"
+    }
+  }
+
+function EffectEvaluation (magnitude){
+    if (magnitude < 2.5){
+      return "Usually not felt, but can be recorded by seismograph."
+    }else if (magnitude >= 2.5 && magnitude < 5.5 ){
+      return "Often felt, but only causes minor damage."
+    }else if (magnitude >= 5.5 && magnitude < 6.1 ){
+      return "Slight damage to buildings and other structures."
+    }else if (magnitude >= 6.1 && magnitude < 7 ){
+      return "May cause a lot of damage in very populated areas."
+    }else if (magnitude >= 7 && magnitude < 8 ){
+      return "Major earthquake. Serious damage." 
+    }else {
+      return "Great earthquake. Can totally destroy communities near the epicenter."
+    }
+  }
+
+
 // Perform a GET request to the query URL
 d3.json(queryUrl, function(data) {
   // Once we get a response, send the data.features object to the createFeatures function
@@ -20,11 +73,11 @@ d3.json(queryUrl, function(data) {
   var earthquakes = L.geoJSON(earthquakeData, {
     pointToLayer: function(features,latlng) {
       return L.circle(latlng,{
-        fillColor: "Red",
+        fillColor: Colourscale(features.properties.mag),
         fillOpacity: 0.75,
-        radius: features.properties.mag*100000,
+        radius: features.properties.mag*10000,
         stroke: false
-      }).bindPopup("<h3>Place: " + features.properties.place + "<h3><h3>Time: " + features.properties.time+ "<h3><h3>Magnitude: " + features.properties.mag + "</h3>");
+      }).bindPopup("<h3>Place: " + features.properties.place + "<h3><h3>Time: " + features.properties.time+ "<h3><h3>Magnitude: " + features.properties.mag + "<h3><h3>Classification: "+ Classifier(features.properties.mag) + "<h3><h3>Effects: "+ EffectEvaluation(features.properties.mag) +"</h3>");
 
     }
   });
