@@ -22,8 +22,9 @@ d3.json(queryUrl, function(data) {
       return L.circle(latlng,{
         fillColor: "Red",
         fillOpacity: 0.75,
-        radius: features.properties.mag*100000
-      }).bindPopup("<h3>Place " + features.properties.place + "<h3><h3>Time: " + features.properties.time+ "<h3><h3>Magnitude: " + features.properties.mag + "</h3>");
+        radius: features.properties.mag*100000,
+        stroke: false
+      }).bindPopup("<h3>Place: " + features.properties.place + "<h3><h3>Time: " + features.properties.time+ "<h3><h3>Magnitude: " + features.properties.mag + "</h3>");
 
     }
   });
