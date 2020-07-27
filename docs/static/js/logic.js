@@ -25,7 +25,8 @@ d3.json(queryUrl, function(data) {
         radius: features.properties.mag*100000
       }).bindPopup("<h3>Place " + features.properties.place + "<h3><h3>Time: " + features.properties.time+ "<h3><h3>Magnitude: " + features.properties.mag + "</h3>");
 
-
+    }
+  });
 
   // Sending our earthquakes layer to the createMap function
   createMap(earthquakes);
