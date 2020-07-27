@@ -111,7 +111,7 @@ d3.json(queryUrl, function(data) {
     var baseMaps = {
       "Street Map": streetmap,
       "Satellite Map": satellitemap,
-      "Grayscale Map": Grayscalemap
+      "Grayscale Map": grayscalemap
     };
 
   // Create overlay object to hold our overlay layer
