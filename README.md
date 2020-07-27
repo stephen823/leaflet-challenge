@@ -1,4 +1,5 @@
-Leaflet_step-1 website: https://stephen823.github.io/leaflet-challenge/Leaflet-Step-1/_
+Leaflet_step-1 website: https://stephen823.github.io/leaflet-challenge/Leaflet-Step-1/
+Leaflet_step-2 website: https://stephen823.github.io/leaflet-challenge/Leaflet-Step-2/
 
 ## Background
 
