@@ -97,14 +97,14 @@ d3.json(queryUrl, function(data) {
     var satellitemap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
       attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
       maxZoom: 18,
-      id: 'mapbox/satellite',
+      id: 'mapbox/satellite-v9',
       accessToken: "pk.eyJ1Ijoic3RlcGhlbno4MjMiLCJhIjoiY2thb2lmaGd3MGhjMzJxbzZlYnBneXJ2diJ9.P_d0zV-iNFx2vZIbjQOzqQ"
     });
       
     var outdoorsmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
       attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
       maxZoom: 18,
-      id: 'mapbox/outdoors',
+      id: 'mapbox/outdoors-v11',
       accessToken: "pk.eyJ1Ijoic3RlcGhlbno4MjMiLCJhIjoiY2thb2lmaGd3MGhjMzJxbzZlYnBneXJ2diJ9.P_d0zV-iNFx2vZIbjQOzqQ"
     });
 
