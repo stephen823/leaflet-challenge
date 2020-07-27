@@ -75,9 +75,9 @@ d3.json(queryUrl, function(data) {
       return L.circle(latlng,{
         fillColor: Colourscale(features.properties.mag),
         fillOpacity: 0.75,
-        radius: features.properties.mag*500000,
+        radius: features.properties.mag*60000,
         stroke: false
-      }).bindPopup("<h3>Place: " + features.properties.place + "<h3><h3>Time: " + features.properties.time+ "<h3><h3>Magnitude: " + features.properties.mag + "<h3><h3>Classification: "+ Classifier(features.properties.mag) + "<h3><h3>Effects: "+ EffectEvaluation(features.properties.mag) +"</h3>");
+      }).bindPopup("<h3>Place: " + features.properties.place + "<h3><h3>Time: " + features.properties.time+ "<h3><h3>Magnitude: " + features.properties.mag + "<h3><h3>Classification: "+ Classifier(features.properties.mag) + "<h3><h3>Effects: "+ EffectEvaluation(features.properties.mag) + "<h3><h3>Reference: "+ "http://www.geo.mtu.edu/UPSeis/magnitude.html" +"</h3>");
 
     }
   });
@@ -92,10 +92,9 @@ d3.json(queryUrl, function(data) {
         maxZoom: 18,
         id: 'mapbox/streets-v11',
         accessToken: "pk.eyJ1Ijoic3RlcGhlbno4MjMiLCJhIjoiY2thb2lmaGd3MGhjMzJxbzZlYnBneXJ2diJ9.P_d0zV-iNFx2vZIbjQOzqQ"
-
     });
-  
-  
+ 
+      
     var baseMaps = {
       "Street Map": streetmap
     };
@@ -113,13 +112,8 @@ d3.json(queryUrl, function(data) {
     zoom: 5,
     layers: [streetmap, earthquakes]
   });
-  // Create a circle and pass in some initial options
-  L.circle([45.52, -122.69], {
-  color: "green",
-  fillColor: "green",
-  fillOpacity: 0.75,
-  radius: 500
-  }).addTo(myMap);
+ 
+
   // Create a layer control
   // Pass in our baseMaps and overlayMaps
   // Add the layer control to the map
