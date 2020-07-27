@@ -19,7 +19,7 @@ d3.json(queryUrl, function(data) {
   // Run the onEachFeature function once for each piece of data in the array
   var earthquakes = L.geoJSON(earthquakeData, {
     pointToLayer: function(features,latlng) {
-      return L.circleMarkker(latlng,{
+      return L.circle(latlng,{
         fillColor: "Red",
         fillOpacity: 0.75,
         radius: features.properties.mag*100000
