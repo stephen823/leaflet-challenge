@@ -75,7 +75,7 @@ d3.json(queryUrl, function(data) {
       return L.circle(latlng,{
         fillColor: Colourscale(features.properties.mag),
         fillOpacity: 0.75,
-        radius: features.properties.mag*10000,
+        radius: features.properties.mag*500000,
         stroke: false
       }).bindPopup("<h3>Place: " + features.properties.place + "<h3><h3>Time: " + features.properties.time+ "<h3><h3>Magnitude: " + features.properties.mag + "<h3><h3>Classification: "+ Classifier(features.properties.mag) + "<h3><h3>Effects: "+ EffectEvaluation(features.properties.mag) +"</h3>");
 
